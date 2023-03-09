@@ -40,6 +40,7 @@ const main = async () => {
     300, // min order duration
     ethers.constants.AddressZero, // factory addr
     erc20Address, // ERC20 payment token addr
+    ethers.constants.AddressZero, // note router should be supplied only if polygon (or uniswap supported network)
   );
 
   console.log(`ERC721 Marketplace address: ${m721.address}`);
@@ -130,6 +131,7 @@ const main = async () => {
     300, // min order duration
     ethers.constants.AddressZero, // factory addr
     erc20Address, // ERC20 payment token addr
+    ethers.constants.AddressZero, // note router should be supplied only if polygon (or uniswap supported network)
   );
 
   console.log(

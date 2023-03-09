@@ -96,6 +96,15 @@ const chains: Array<NetworkUserConfig> = [
           mnemonic: MNEMONIC || DEFAULT_MNEMONIC,
         },
   },
+  {
+    chainId: 80001, // mumbai
+    url: "https://rpc-mumbai.maticvigil.com",
+    accounts: PK
+      ? [PK]
+      : {
+          mnemonic: MNEMONIC || DEFAULT_MNEMONIC,
+        },
+  },
 ];
 
 function getChainConfig(id: number) {
@@ -141,6 +150,7 @@ const config: HardhatUserConfig = {
     skaleDevnet: getChainConfig(344106930),
     goerli: getChainConfig(5),
     ganache: getChainConfig(1337),
+    mumbai: getChainConfig(80001),
     hardhat: {
       forking: {
         url: `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
